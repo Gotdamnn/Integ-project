@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="../Css/dashboard.css" />
+</head>
+<body>
+
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <h2>Admin Panel</h2>
+    <ul>
+      <li><a href="#" onclick="showSection('dashboard')">Dashboard</a></li>
+      <li><a href="#" onclick="showSection('products')">Products</a></li>
+      <li><a href="#" onclick="showSection('users')">Users</a></li>
+      <li><a href="#" onclick="showSection('settings')">Settings</a></li>
+    </ul>
+    <button class="btn btn-gold logout-btn" onclick="logout()">Logout</button>
+  </aside>
+
+  <!-- Main Content -->
+  <main id="main-content">
+<!-- Dashboard Section -->
+<section id="dashboard" class="section active">
+  <div class="dashboard-header">
+    <h1>Dashboard Overview</h1>
+    <p>Welcome back! Here’s what’s happening with your store today.</p>
+  </div>
+
+  <!-- Dashboard Summary Cards -->
+  <div class="dashboard-cards">
+    <div class="card earnings">
+      <div class="card-icon">💰</div>
+      <h2>₱<span id="totalEarnings">25,000</span></h2>
+      <p>Total Sales (This Month)</p>
+      <small>↑ 100% vs last month</small>
+    </div>
+
+    <div class="card orders">
+      <div class="card-icon">📦</div>
+      <h2><span id="orderCount">120</span></h2>
+      <p>Total Orders</p>
+      <small>↑ 50% vs last month</small>
+    </div>
+
+    <div class="card products">
+      <div class="card-icon">📋</div>
+      <h2><span id="productCount">36</span></h2>
+      <p>Total Products</p>
+      <small>↔ Same as last month</small>
+    </div>
+
+    <div class="card pending">
+      <div class="card-icon">🕓</div>
+      <h2><span id="pendingOrders">8</span></h2>
+      <p>Pending Orders</p>
+      <small>↓ 10% vs last month</small>
+    </div>
+  </div>
+
+  <!-- Filters -->
+  <div class="filters">
+    <div class="filter-row">
+      <label for="salesFilter"><strong>Preset:</strong></label>
+      <select id="salesFilter">
+        <option value="day">1 Day</option>
+        <option value="week" selected>1 Week</option>
+        <option value="year">1 Year</option>
+      </select>
+    </div>
+
+    <div class="filter-row filter-controls">
+      <div class="control">
+        <label for="customStart">Start date</label>
+        <input id="customStart" type="date" />
+      </div>
+      <div class="control">
+        <label for="customEnd">End date</label>
+        <input id="customEnd" type="date" />
+      </div>
+      <div class="control" style="align-self:end">
+        <button id="applyFilterBtn" class="btn btn-primary">Apply</button>
+      </div>
+    </div> 
+
+
+  <!-- Sales Data Chart / Summary -->
+  <div class="sales-chart">
+    <h3>Sales Overview</h3>
+    <div class="chart-placeholder">
+      <div class="chart-left">
+        <div class="chart-box">
+          <canvas id="salesChart"></canvas>
+        </div>
+      </div>
+      <div class="chart-right">
+        <div class="chart-box">
+          <h4 style="margin:6px 0 8px 0;font-size:0.95rem;color:#333;">Total Orders</h4>
+          <canvas id="ordersChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Products Section -->
+    <section id="products" class="section">
+      <h1>Manage Products</h1>
+      <form id="productForm" onsubmit="addProduct(event)">
+        <input type="text" id="productName" placeholder="Product Name" required />
+        <input type="number" id="productPrice" placeholder="Price (₱)" required />
+        <input type="file" id="productImage" accept="image/*" />
+        <textarea id="productDesc" placeholder="Description"></textarea>
+        <button type="submit" class="btn btn-primary">Add Product</button>
+      </form>
+      <div id="productList"></div>
+      
+      
+    </section>
+
+  <!-- USERS SECTION -->
+  <section id="users" class="section">
+    <h1>User Management</h1>
+    <p>Total Users: <span id="totalUsers">3</span></p>
+
+    <!-- ✅ User List -->
+    <div id="userList">
+      <table class="user-table">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John Doe</td>
+            <td>Active</td>
+            <td>
+              <div class="action-buttons">
+                <button onclick="openUserModal('John Doe')">Ban</button>
+                <button onclick="openEditUserModal('John Doe')">Edit</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Jane Smith</td>
+            <td>Active</td>
+            <td>
+              <div class="action-buttons">
+                <button onclick="openUserModal('Jane Smith')">Ban</button>
+                <button onclick="openEditUserModal('Jane Smith')">Edit</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Michael Cruz</td>
+            <td>Active</td>
+            <td>
+              <div class="action-buttons">
+                <button onclick="openUserModal('Michael Cruz')">Ban</button>
+                <button onclick="openEditUserModal('Michael Cruz')">Edit</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ✅ User Summary -->
+    <div class="user-summary">
+      <h3>User Summary</h3>
+      <table class="summary-table">
+        <tr>
+          <th>Reason:</th>
+          <td id="summaryReason">—</td>
+        </tr>
+        <tr>
+          <th>Start of Ban:</th>
+          <td id="summaryStart">—</td>
+        </tr>
+        <tr>
+          <th>End of Ban:</th>
+          <td id="summaryEnd">—</td>
+        </tr>
+        <tr>
+          <th>Status:</th>
+          <td id="summaryStatus">Active</td>
+        </tr>
+        <tr>
+          <th>Total Users:</th>
+          <td id="summaryTotal">3</td>
+        </tr>
+      </table>
+
+      <!-- List of all banned users -->
+      <div class="banned-list-container">
+        <h4>Banned Users</h4>
+        <ul id="bannedList" class="banned-list">
+          <!-- populated by JS -->
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- BAN / LIFT / EDIT MODAL -->
+  <div id="userModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeUserModal()">×</button>
+      <h2 id="modalTitle">Ban User</h2>
+      <form id="userForm">
+        <p><strong>User:</strong> <span id="modalUsername">—</span></p>
+        <label for="userReason">Reason / Description:</label>
+        <textarea id="userReason" rows="3" placeholder="Enter reason..." required></textarea>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div style="flex:1;min-width:160px;">
+            <label for="banStart">Start Date:</label>
+            <input id="banStart" type="date" />
+          </div>
+          <div style="flex:1;min-width:160px;">
+            <label for="banEnd">End Date:</label>
+            <input id="banEnd" type="date" />
+          </div>
+        </div>
+
+        <div class="modal-buttons" style="margin-top:12px;">
+          <button type="submit" class="btn btn-primary">Confirm</button>
+          <button type="button" class="btn btn-secondary" onclick="closeUserModal()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Lift confirmation modal (replaces window.confirm) -->
+  <div id="liftModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeLiftModal()">×</button>
+      <h3>Lift Ban</h3>
+      <p id="liftMessage">Are you sure?</p>
+      <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:12px;">
+  <button id="liftConfirmBtn" type="button" class="btn btn-primary" onclick="confirmLift()">Yes</button>
+        <button class="btn btn-secondary" onclick="closeLiftModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Generic confirm modal (used for delete/other confirms) -->
+  <div id="confirmModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeConfirmModal()">×</button>
+      <h3 id="confirmTitle">Confirm</h3>
+      <p id="confirmMessage">Are you sure?</p>
+      <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:12px;">
+        <button id="confirmOkBtn" type="button" class="btn btn-primary">Yes</button>
+        <button class="btn btn-secondary" onclick="closeConfirmModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+    <!-- Settings Section -->
+    <section id="settings" class="section">
+      <h1>Settings</h1>
+      <ul>
+        <li>Update Profile Info</li>
+        <li>Change Password</li>
+        <li>Notification Preferences</li>
+        <li>Theme Customization</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../Js/dashboard.js"></script>
+</body>
+</html>
