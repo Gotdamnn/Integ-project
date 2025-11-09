@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Contact Us - Bud Budots | Get In Touch</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../Css/Navbar.css">
+    <link rel="stylesheet" href="../Css/Contact.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-bowl-food"></i>
+                <span>Bud budots</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="sidebar-welcome">
+                    <div class="guest-profile">
+                        <div class="guest-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="guest-info">
+                            <span class="guest-name">Admin User</span>
+                            <span class="guest-status">Signed in</span>
+                        </div>
+                    </div>
+                    <div class="welcome-message">
+                        <i class="fas fa-hand-wave"></i>
+                        <span>Welcome to Bud Budots!</span>
+                    </div>
+                </li>
+                <li><a href="Index.html" class="nav-link">Home</a></li>
+                <li><a href="Menu.html" class="nav-link">Menu</a></li>
+                <li><a href="Download.html" class="nav-link">Download</a></li>
+                <li><a href="Mission.html" class="nav-link">Mission</a></li>
+                <li><a href="About.html" class="nav-link">About</a></li>
+                <li><a href="Contact.html" class="nav-link active">Contact</a></li>
+                <li class="sidebar-order-btn">
+                     <li class="sidebar-order-btn">
+                        <a href="../../Log In/Log In.html" class="btn-sidebar">
+                            <i class="fas fa-user"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="../../Log In/Log In.html" class="btn-nav">
+                        <i class="fas fa-user"></i>
+                        Dashboard
+                </a>
+                <button class="hamburger">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="48" fill="#FCC61D" opacity="0.2"/>
+                        <path d="M30,45 Q50,25 70,45" fill="none" stroke="#FCC61D" stroke-width="3" stroke-linecap="round"/>
+                        <ellipse cx="50" cy="55" rx="25" ry="15" fill="#FCC61D"/>
+                        <path d="M25,55 L25,70 Q25,75 30,75 L70,75 Q75,75 75,70 L75,55" fill="#C59560"/>
+                        <circle cx="40" cy="50" r="3" fill="#3338A0"/>
+                        <circle cx="50" cy="48" r="3" fill="#3338A0"/>
+                        <circle cx="60" cy="50" r="3" fill="#3338A0"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background">
+            <div class="wave-animation wave-1"></div>
+            <div class="wave-animation wave-2"></div>
+            <div class="wave-animation wave-3"></div>
+            <div class="rice-grains"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-icons">
+                <span class="hero-icon"><i class="fas fa-phone"></i></span>
+                <span class="hero-icon"><i class="fas fa-envelope"></i></span>
+                <span class="hero-icon"><i class="fas fa-map-marker-alt"></i></span>
+            </div>
+            <h1 class="hero-title">Contact Us</h1>
+            <p class="hero-subtitle">We'd love to hear from you — let's keep the silog love sizzling! ❤️‍🔥</p>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">📬 Get In Touch</span>
+                <h2>Send Us a Message</h2>
+                <p>Have a question, feedback, or just want to say hello? We're all ears!</p>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">
+                            <i class="fas fa-user"></i>
+                            Your Name
+                        </label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            placeholder="Juan Dela Cruz"
+                            required
+                        >
+                        <span class="error-message">Please enter your name</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">
+                            <i class="fas fa-envelope"></i>
+                            Email Address
+                        </label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="juan@example.com"
+                            required
+                        >
+                        <span class="error-message">Please enter a valid email</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">
+                        <i class="fas fa-tag"></i>
+                        Subject
+                    </label>
+                    <input 
+                        type="text" 
+                        id="subject" 
+                        name="subject" 
+                        placeholder="What's on your mind?"
+                        required
+                    >
+                    <span class="error-message">Please enter a subject</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">
+                        <i class="fas fa-comment-dots"></i>
+                        Message
+                    </label>
+                    <textarea 
+                        id="message" 
+                        name="message" 
+                        rows="6" 
+                        placeholder="Share your thoughts, questions, or silog cravings..."
+                        required
+                    ></textarea>
+                    <span class="error-message">Please enter your message</span>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span class="btn-text">Send Message</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Info Cards -->
+    <section class="contact-info-section">
+        <div class="section-container">
+            <div class="info-cards-grid">
+                <div class="info-card">
+                    <div class="card-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Visit Us</h3>
+                    <p>Manila, Philippines</p>
+                    <span class="card-detail">Where the silog magic happens!</span>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Call Us</h3>
+                    <p>+63 917 123 4567</p>
+                    <span class="card-detail">Mon–Sun, 7AM–10PM</span>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Us</h3>
+                    <p>hello@budbudots.ph</p>
+                    <span class="card-detail">We reply within 24 hours!</span>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Operating Hours</h3>
+                    <p>Mon–Sun</p>
+                    <span class="card-detail">7:00 AM – 10:00 PM</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">📍 Find Us</span>
+                <h2>Our Location</h2>
+                <p>Come visit us at our main branch in the heart of Manila!</p>
+            </div>
+
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247925.9907814634!2d120.8970524!3d14.5995124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ca03571ec38b%3A0x69d1d5751069c11f!2sManila%2C%20Metro%20Manila%2C%20Philippines!5e0!3m2!1sen!2sph!4v1234567890"
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="wave-divider">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0 C150,80 350,0 600,50 C850,100 1050,20 1200,80 L1200,120 L0,120 Z" fill="#3338A0"></path>
+            </svg>
+        </div>
+        <div class="cta-content">
+            <div class="cta-icon">
+                <i class="fas fa-utensils"></i>
+            </div>
+            <h2>Let's Connect Over Silog</h2>
+            <p>Reach out anytime — we're here to serve you the best Filipino breakfast experience!</p>
+            <div class="cta-buttons">
+                <a href="Index.html" class="cta-btn primary">
+                    <i class="fas fa-shopping-bag"></i>
+                    Order Now
+                </a>
+                <a href="#" class="cta-btn secondary">
+                    <i class="fas fa-comments"></i>
+                    Chat With Us
+                </a>
+            </div>
+            
+
+
+
+                <nav class="bottom-nav">
+                <a href="Index.html" class="bottom-nav-item" data-page="home">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="Menu.html" class="bottom-nav-item" data-page="menu">
+                    <i class="fas fa-utensils"></i>
+                    <span>Menu</span>
+                </a>
+                <a href="../../Log In/Log In.html" class="bottom-nav-item" data-page="login">
+                    <i class="fas fa-user"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="About.html" class="bottom-nav-item" data-page="about">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </a>
+                <a href="Download.html" class="bottom-nav-item" data-page="download">
+                    <i class="fas fa-download"></i>
+                    <span>Download</span>
+                </a>
+            </nav>
+
+    <!-- JavaScript -->
+    <script src="../Js/Contact.js"></script>
+</body>
+</html>

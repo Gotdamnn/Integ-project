@@ -1,0 +1,794 @@
+/* ===== Full-Screen Download Page Design ===== */
+
+/* Reset only for download page specific elements, not global */
+.download-fullscreen *,
+.download-fullscreen *::before,
+.download-fullscreen *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    background: #0f172a;
+}
+
+/* ===== Full-Screen Hero Section ===== */
+.download-fullscreen {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1e3a8a 0%, #3338A0 50%, #2563eb 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===== Curved Wave Background ===== */
+.wave-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.wave-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+.wave-1 {
+    animation: waveAnimation1 15s ease-in-out infinite;
+    z-index: 3;
+}
+
+.wave-2 {
+    animation: waveAnimation2 18s ease-in-out infinite;
+    z-index: 2;
+    opacity: 0.6;
+}
+
+.wave-3 {
+    animation: waveAnimation3 20s ease-in-out infinite;
+    z-index: 1;
+    opacity: 0.4;
+}
+
+@keyframes waveAnimation1 {
+    0%, 100% {
+        transform: translateX(0) translateY(0);
+    }
+    25% {
+        transform: translateX(-2%) translateY(-3%);
+    }
+    50% {
+        transform: translateX(2%) translateY(3%);
+    }
+    75% {
+        transform: translateX(-1%) translateY(-2%);
+    }
+}
+
+@keyframes waveAnimation2 {
+    0%, 100% {
+        transform: translateX(0) translateY(0);
+    }
+    33% {
+        transform: translateX(3%) translateY(2%);
+    }
+    66% {
+        transform: translateX(-2%) translateY(-3%);
+    }
+}
+
+@keyframes waveAnimation3 {
+    0%, 100% {
+        transform: translateX(0) translateY(0);
+    }
+    40% {
+        transform: translateX(-3%) translateY(2%);
+    }
+    80% {
+        transform: translateX(2%) translateY(-2%);
+    }
+}
+
+/* ===== Food Shape Decorations ===== */
+.food-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    pointer-events: none;
+}
+
+.food-shape {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    opacity: 0.2;
+    animation: floatFood 20s ease-in-out infinite;
+}
+
+.rice-bowl {
+    top: 15%;
+    left: 10%;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.egg {
+    top: 60%;
+    right: 12%;
+    animation-delay: 2s;
+    animation-duration: 22s;
+}
+
+.meat {
+    bottom: 20%;
+    left: 15%;
+    animation-delay: 4s;
+    animation-duration: 20s;
+}
+
+.grain {
+    width: 30px;
+    height: 30px;
+}
+
+.grain-1 {
+    top: 25%;
+    right: 25%;
+    animation-delay: 1s;
+}
+
+.grain-2 {
+    bottom: 35%;
+    right: 20%;
+    animation-delay: 3s;
+}
+
+.grain-3 {
+    top: 70%;
+    left: 25%;
+    animation-delay: 5s;
+}
+
+.grain .particle {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, #FCC61D 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+@keyframes floatFood {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+    25% {
+        transform: translate(30px, -30px) rotate(5deg) scale(1.1);
+    }
+    50% {
+        transform: translate(-20px, 40px) rotate(-5deg) scale(0.9);
+    }
+    75% {
+        transform: translate(40px, 20px) rotate(3deg) scale(1.05);
+    }
+}
+
+/* ===== Floating Particles ===== */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.particles .particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, #FCC61D 0%, transparent 70%);
+    border-radius: 50%;
+    left: var(--x);
+    top: var(--y);
+    animation: particleFloat var(--duration) ease-in-out infinite;
+    animation-delay: var(--delay);
+    opacity: 0.4;
+}
+
+@keyframes particleFloat {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.3;
+    }
+    25% {
+        transform: translate(20px, -30px) scale(1.3);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translate(-30px, 20px) scale(0.8);
+        opacity: 0.4;
+    }
+    75% {
+        transform: translate(15px, -15px) scale(1.1);
+        opacity: 0.5;
+    }
+}
+
+/* ===== Main Content ===== */
+.download-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 2rem;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Brand Name ===== */
+.brand-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.brand-name {
+    font-size: clamp(4rem, 12vw, 10rem);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    animation: brandGlow 3s ease-in-out infinite;
+}
+
+.brand-prefix {
+    color: #FCC61D;
+    text-shadow: 
+        0 0 20px rgba(252, 198, 29, 0.8),
+        0 0 40px rgba(252, 198, 29, 0.5),
+        0 0 60px rgba(252, 198, 29, 0.3),
+        0 5px 20px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    animation: pulseGold 2s ease-in-out infinite;
+}
+
+.brand-suffix {
+    color: white;
+    text-shadow: 
+        0 0 20px rgba(255, 255, 255, 0.5),
+        0 0 40px rgba(59, 130, 246, 0.5),
+        0 5px 20px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    animation: pulseWhite 2s ease-in-out infinite 0.5s;
+}
+
+@keyframes brandGlow {
+    0%, 100% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.2);
+    }
+}
+
+@keyframes pulseGold {
+    0%, 100% {
+        transform: scale(1);
+        text-shadow: 
+            0 0 20px rgba(252, 198, 29, 0.8),
+            0 0 40px rgba(252, 198, 29, 0.5),
+            0 0 60px rgba(252, 198, 29, 0.3);
+    }
+    50% {
+        transform: scale(1.05);
+        text-shadow: 
+            0 0 30px rgba(252, 198, 29, 1),
+            0 0 60px rgba(252, 198, 29, 0.7),
+            0 0 90px rgba(252, 198, 29, 0.5);
+    }
+}
+
+@keyframes pulseWhite {
+    0%, 100% {
+        transform: scale(1);
+        text-shadow: 
+            0 0 20px rgba(255, 255, 255, 0.5),
+            0 0 40px rgba(59, 130, 246, 0.5);
+    }
+    50% {
+        transform: scale(1.05);
+        text-shadow: 
+            0 0 30px rgba(255, 255, 255, 0.8),
+            0 0 60px rgba(59, 130, 246, 0.8);
+    }
+}
+
+/* ===== Tagline ===== */
+.tagline {
+    font-size: clamp(1rem, 3vw, 2rem);
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeIn 1.5s ease-out 0.5s both;
+}
+
+.tagline-word {
+    display: inline-block;
+    animation: wordPop 0.6s ease-out both;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.tagline-word:nth-child(1) {
+    animation-delay: 0.8s;
+    color: #FCC61D;
+}
+
+.tagline-word:nth-child(2) {
+    animation-delay: 1s;
+    color: #C59560;
+}
+
+.tagline-word:nth-child(3) {
+    animation-delay: 1.2s;
+    color: white;
+}
+
+@keyframes wordPop {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) translateY(20px);
+    }
+    60% {
+        transform: scale(1.1) translateY(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ===== Download Button ===== */
+.btn-download {
+    position: relative;
+    margin-top: 3rem;
+    padding: 1.5rem 4rem;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #1e3a8a;
+    background: linear-gradient(135deg, #FCC61D 0%, #fbbf24 50%, #FCC61D 100%);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 
+        0 10px 40px rgba(252, 198, 29, 0.6),
+        0 0 60px rgba(252, 198, 29, 0.4),
+        inset 0 -5px 20px rgba(197, 149, 96, 0.3);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: fadeIn 1.8s ease-out 1.4s both, buttonFloat 3s ease-in-out infinite 2s;
+}
+
+.btn-download:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 
+        0 20px 60px rgba(252, 198, 29, 0.8),
+        0 0 100px rgba(252, 198, 29, 0.6),
+        inset 0 -5px 20px rgba(197, 149, 96, 0.5);
+    animation: bounce 0.6s ease-in-out;
+}
+
+.btn-download:active {
+    transform: translateY(-5px) scale(1.02);
+}
+
+@keyframes buttonFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(-10px) scale(1.05);
+    }
+    25% {
+        transform: translateY(-15px) scale(1.08);
+    }
+    50% {
+        transform: translateY(-10px) scale(1.05);
+    }
+    75% {
+        transform: translateY(-12px) scale(1.06);
+    }
+}
+
+.btn-text {
+    position: relative;
+    z-index: 2;
+}
+
+/* Button Glow Effect */
+.btn-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.btn-download:hover .btn-glow {
+    opacity: 1;
+    animation: glowPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+/* Button Ripple Effect */
+.btn-ripple {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.btn-download:active .btn-ripple {
+    animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* ===== App Store Badges ===== */
+.app-stores {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+    animation: fadeIn 2s ease-out 1.6s both;
+}
+
+.store-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.store-badge:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: rgba(0, 0, 0, 0.6);
+    border-color: #FCC61D;
+    box-shadow: 0 10px 30px rgba(252, 198, 29, 0.4);
+}
+
+.store-badge i {
+    font-size: 2rem;
+}
+
+.store-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.store-text .small {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.store-text .large {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* ===== Scroll Indicator ===== */
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    opacity: 0.7;
+    animation: fadeIn 2.5s ease-out 2s both, scrollBounce 2s ease-in-out infinite 3s;
+    z-index: 10;
+}
+
+.mouse {
+    width: 30px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 15px;
+    margin: 0 auto 0.5rem;
+    position: relative;
+}
+
+.wheel {
+    width: 4px;
+    height: 8px;
+    background: white;
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: wheelScroll 1.5s ease-in-out infinite;
+}
+
+@keyframes wheelScroll {
+    0% {
+        top: 8px;
+        opacity: 1;
+    }
+    100% {
+        top: 30px;
+        opacity: 0;
+    }
+}
+
+@keyframes scrollBounce {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(10px);
+    }
+}
+
+.scroll-indicator p {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 1024px) {
+    .brand-name {
+        font-size: clamp(3rem, 10vw, 8rem);
+    }
+
+    .tagline {
+        font-size: clamp(0.8rem, 2.5vw, 1.5rem);
+        letter-spacing: 0.2em;
+    }
+
+    .btn-download {
+        padding: 1.2rem 3rem;
+        font-size: clamp(1rem, 2.5vw, 1.5rem);
+    }
+
+    .food-shape {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .brand-name {
+        font-size: clamp(2.5rem, 12vw, 6rem);
+    }
+
+    .tagline {
+        font-size: clamp(0.7rem, 2vw, 1.2rem);
+        gap: 0.5rem;
+        letter-spacing: 0.15em;
+    }
+
+    .btn-download {
+        padding: 1rem 2.5rem;
+        font-size: clamp(0.9rem, 2vw, 1.2rem);
+        margin-top: 2rem;
+    }
+
+    .app-stores {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .store-badge {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+
+    .food-shape {
+        width: 80px;
+        height: 80px;
+    }
+
+    .scroll-indicator {
+        bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .download-content {
+        padding: 1rem;
+    }
+
+    .brand-name {
+        font-size: clamp(2rem, 15vw, 4rem);
+        margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+        font-size: clamp(0.6rem, 4vw, 1rem);
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .btn-download {
+        padding: 0.8rem 2rem;
+        font-size: clamp(0.8rem, 4vw, 1rem);
+    }
+
+    .app-stores {
+        margin-top: 1rem;
+    }
+
+    .store-badge {
+        padding: 0.6rem 1.2rem;
+        max-width: 200px;
+    }
+
+    .store-badge i {
+        font-size: 1.5rem;
+    }
+
+    .food-shape {
+        width: 60px;
+        height: 60px;
+    }
+
+    .particles .particle {
+        width: 5px;
+        height: 5px;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 375px) {
+    .download-content {
+        padding: 0.75rem;
+    }
+
+    .brand-name {
+        font-size: clamp(1.75rem, 12vw, 3.5rem);
+        margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+        font-size: clamp(0.55rem, 3.5vw, 0.9rem);
+        gap: 0.25rem;
+    }
+
+    .description {
+        font-size: 0.85rem;
+        padding: 0 0.5rem;
+    }
+
+    .btn-download {
+        padding: 0.75rem 1.75rem;
+        font-size: 0.9rem;
+    }
+
+    .store-badge {
+        padding: 0.55rem 1.1rem;
+        max-width: 180px;
+    }
+
+    .food-shape {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+}
+
+/* ===== Performance Optimizations ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===== Navbar Consistency Fix ===== */
+/* Navbar styles are handled by navbar-footer.css */
+
+/* Ensure sidebar backdrop is visible */
+body.menu-open::before {
+    z-index: 1000 !important;
+}
+
+/* Ensure bottom nav appears */
+.bottom-nav {
+    z-index: 999 !important;
+}

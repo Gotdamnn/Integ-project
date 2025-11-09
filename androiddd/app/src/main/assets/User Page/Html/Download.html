@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Download - Bud Budots App</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../Css/Navbar.css">
+    <link rel="stylesheet" href="../Css/Download.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-bowl-food"></i>
+                <span>Bud budots</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="sidebar-welcome">
+                    <div class="guest-profile">
+                        <div class="guest-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="guest-info">
+                            <span class="guest-name">Admin User</span>
+                            <span class="guest-status">Signed in</span>
+                        </div>
+                    </div>
+                    <div class="welcome-message">
+                        <i class="fas fa-hand-wave"></i>
+                        <span>Welcome to Bud Budots!</span>
+                    </div>
+                </li>
+                <li><a href="Index.html" class="nav-link ">Home</a></li>
+                <li><a href="Menu.html" class="nav-link">Menu</a></li>
+                <li><a href="Download.html" class="nav-link active">Download</a></li>
+                <li><a href="Mission.html" class="nav-link">Mission</a></li>
+                <li><a href="About.html" class="nav-link">About</a></li>
+                <li><a href="Contact.html" class="nav-link">Contact</a></li>
+                <li class="sidebar-order-btn">
+                    <li class="sidebar-order-btn">
+                        <a href="../../Log In/Log In.html" class="btn-sidebar">
+                            <i class="fas fa-user"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="../../Log In/Log In.html" class="btn-nav">
+                        <i class="fas fa-user"></i>
+                        Dashboard
+                </a>
+                <button class="hamburger">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="48" fill="#FCC61D" opacity="0.2"/>
+                        <path d="M30,45 Q50,25 70,45" fill="none" stroke="#FCC61D" stroke-width="3" stroke-linecap="round"/>
+                        <ellipse cx="50" cy="55" rx="25" ry="15" fill="#FCC61D"/>
+                        <path d="M25,55 L25,70 Q25,75 30,75 L70,75 Q75,75 75,70 L75,55" fill="#C59560"/>
+                        <circle cx="40" cy="50" r="3" fill="#3338A0"/>
+                        <circle cx="50" cy="48" r="3" fill="#3338A0"/>
+                        <circle cx="60" cy="50" r="3" fill="#3338A0"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Full-Screen Download Hero -->
+    <section class="download-fullscreen">
+        <!-- Curved Wave Background -->
+        <div class="wave-background">
+            <svg class="wave-layer wave-1" viewBox="0 0 1440 800" preserveAspectRatio="none">
+                <path d="M0,400 C360,300 720,500 1440,400 L1440,800 L0,800 Z" fill="url(#blueGradient)"/>
+            </svg>
+            <svg class="wave-layer wave-2" viewBox="0 0 1440 800" preserveAspectRatio="none">
+                <path d="M0,450 C400,350 800,550 1440,450 L1440,800 L0,800 Z" fill="url(#goldGradient)"/>
+            </svg>
+            <svg class="wave-layer wave-3" viewBox="0 0 1440 800" preserveAspectRatio="none">
+                <path d="M0,500 C500,400 900,600 1440,500 L1440,800 L0,800 Z" fill="url(#blueGradient2)"/>
+            </svg>
+        </div>
+
+        <!-- SVG Gradients -->
+        <svg width="0" height="0">
+            <defs>
+                <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:0.9" />
+                    <stop offset="100%" style="stop-color:#3338A0;stop-opacity:0.85" />
+                </linearGradient>
+                <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#FCC61D;stop-opacity:0.3" />
+                    <stop offset="100%" style="stop-color:#C59560;stop-opacity:0.4" />
+                </linearGradient>
+                <linearGradient id="blueGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#2563eb;stop-opacity:0.8" />
+                    <stop offset="100%" style="stop-color:#1e40af;stop-opacity:0.75" />
+                </linearGradient>
+            </defs>
+        </svg>
+
+        <!-- Food Shape Decorations -->
+        <div class="food-shapes">
+            <!-- Rice Bowl -->
+            <div class="food-shape rice-bowl" data-speed="0.5">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="50" cy="55" rx="35" ry="25" fill="#FCC61D" opacity="0.15"/>
+                    <path d="M15,55 L15,70 Q15,80 25,80 L75,80 Q85,80 85,70 L85,55" fill="#C59560" opacity="0.12"/>
+                    <circle cx="40" cy="50" r="3" fill="#FCC61D" opacity="0.2"/>
+                    <circle cx="50" cy="48" r="3" fill="#FCC61D" opacity="0.2"/>
+                    <circle cx="60" cy="50" r="3" fill="#FCC61D" opacity="0.2"/>
+                </svg>
+            </div>
+
+            <!-- Egg -->
+            <div class="food-shape egg" data-speed="0.8">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="50" cy="55" rx="25" ry="30" fill="#FCC61D" opacity="0.18"/>
+                    <circle cx="50" cy="55" r="12" fill="#C59560" opacity="0.15"/>
+                </svg>
+            </div>
+
+            <!-- Meat Silhouette -->
+            <div class="food-shape meat" data-speed="0.6">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30,40 Q50,20 70,40 L75,55 Q75,70 60,75 L40,75 Q25,70 25,55 Z" fill="#C59560" opacity="0.13"/>
+                </svg>
+            </div>
+
+            <!-- Additional Rice Grains -->
+            <div class="food-shape grain grain-1" data-speed="0.4">
+                <div class="particle"></div>
+            </div>
+            <div class="food-shape grain grain-2" data-speed="0.7">
+                <div class="particle"></div>
+            </div>
+            <div class="food-shape grain grain-3" data-speed="0.5">
+                <div class="particle"></div>
+            </div>
+        </div>
+
+        <!-- Floating Particles -->
+        <div class="particles">
+            <div class="particle" style="--x: 10%; --y: 20%; --delay: 0s; --duration: 8s;"></div>
+            <div class="particle" style="--x: 85%; --y: 15%; --delay: 1s; --duration: 10s;"></div>
+            <div class="particle" style="--x: 25%; --y: 70%; --delay: 2s; --duration: 9s;"></div>
+            <div class="particle" style="--x: 75%; --y: 65%; --delay: 3s; --duration: 11s;"></div>
+            <div class="particle" style="--x: 50%; --y: 85%; --delay: 1.5s; --duration: 7s;"></div>
+            <div class="particle" style="--x: 90%; --y: 50%; --delay: 2.5s; --duration: 8.5s;"></div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="download-content">
+            <div class="brand-container">
+                <h1 class="brand-name">
+                    <span class="brand-prefix">Bud</span>
+                    <span class="brand-suffix">Budots</span>
+                </h1>
+                
+                <p class="tagline">
+                    <span class="tagline-word">SARAP.</span>
+                    <span class="tagline-word">SULIT.</span>
+                    <span class="tagline-word">SIGURADO.</span>
+                </p>
+
+                <button class="btn-download">
+                    <span class="btn-text">Download Here</span>
+                    <div class="btn-glow"></div>
+                    <div class="btn-ripple"></div>
+                </button>
+
+                
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+    <!-- Bottom Navigation Bar (Mobile Only) -->
+   <nav class="bottom-nav">
+                <a href="Index.html" class="bottom-nav-item" data-page="home">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="Menu.html" class="bottom-nav-item" data-page="menu">
+                    <i class="fas fa-utensils"></i>
+                    <span>Menu</span>
+                </a>
+                <a href="../../Log In/Log In.html" class="bottom-nav-item" data-page="login">
+                    <i class="fas fa-user"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="About.html" class="bottom-nav-item" data-page="about">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </a>
+                <a href="Download.html" class="bottom-nav-item  active" data-page="download">
+                    <i class="fas fa-download"></i>
+                    <span>Download</span>
+                </a>
+            </nav>
+
+    <script src="../Js/Download.js"></script>
+</body>
+</html>
