@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders - Bud Budots</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Navigation CSS -->
+    <link rel="stylesheet" href="../Css/Nav.css">
+    
+    <!-- Orders CSS -->
+    <link rel="stylesheet" href="../Css/Orders.css">
+    
+    <!-- Mobile CSS -->
+    <link rel="stylesheet" href="../Css/Mobile.css">
+</head>
+<body>
+    <!-- Wave Background Decoration -->
+    <div class="wave-bg"></div>
+    
+    <!-- Sidebar Overlay for Mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <!-- Logo -->
+            <div class="logo">
+                <i class="fas fa-bowl-food"></i>
+                <span class="brand-name">Bud <span class="brand-accent">Budots</span></span>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search your orders...">
+            </div>
+
+            <!-- Right Actions -->
+            <div class="nav-actions">
+                <!-- Notifications -->
+                <button class="nav-icon" id="notificationBtn">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+
+                <!-- Cart -->
+                <button class="nav-icon" id="cartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="notification-badge">2</span>
+                </button>
+
+                <!-- User Profile -->
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=Juan+Dela+Cruz&background=FCC61D&color=3338A0&bold=true" alt="User">
+                    <div class="user-info">
+                        <span class="user-name">Juan Dela Cruz</span>
+                        <span class="user-role">Food Lover</span>
+                    </div>
+                    <i class="fas fa-chevron-down dropdown-arrow"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wave Decoration -->
+        <div class="wave-decoration">
+            <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
+                <path d="M0,30 Q300,0 600,30 T1200,30 L1200,60 L0,60 Z" fill="#FCC61D" opacity="0.3"/>
+            </svg>
+            <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
+                <path d="M0,40 Q300,10 600,40 T1200,40 L1200,60 L0,60 Z" fill="#3338A0" opacity="0.2"/>
+            </svg>
+        </div>
+    </nav>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+
+        </div>
+
+        <div class="sidebar-content">
+            <ul class="sidebar-menu">
+                <li>
+                    <a href="Dashboard.html">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="Orders.html">
+                        <i class="fas fa-receipt"></i>
+                        <span>My Orders</span>
+                        <span class="menu-badge">3</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Favorites.html">
+                        <i class="fas fa-heart"></i>
+                        <span>Favorites</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Profile.html">
+                        <i class="fas fa-user"></i>
+                        <span>My Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Settings.html">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="sidebar-promo">
+                <div class="promo-card">
+                    <i class="fas fa-gift"></i>
+                    <h4>Special Offer!</h4>
+                    <p>Get 20% off on your next order</p>
+                    <button class="btn-claim">Claim Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-footer">
+            <a href="../Html/Dashboard.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back</span>
+            </a>
+            <a href="../../Log In/Log In.html" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1><i class="fas fa-receipt"></i> My Orders</h1>
+                    <p>Track and manage all your delicious orders</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-filter">
+                        <i class="fas fa-filter"></i>
+                        Filter
+                    </button>
+                    <button class="btn-sort">
+                        <i class="fas fa-sort"></i>
+                        Sort
+                    </button>
+                </div>
+            </div>
+
+            <!-- Order Status Tabs -->
+            <div class="filter-pills">
+                <button class="pill active" data-status="all">
+                    <i class="fas fa-th"></i>
+                    All Orders
+                </button>
+                <button class="pill" data-status="pending">
+                    <i class="fas fa-clock"></i>
+                    Pending
+                </button>
+                <button class="pill" data-status="preparing">
+                    <i class="fas fa-fire"></i>
+                    Preparing
+                </button>
+                <button class="pill" data-status="delivery">
+                    <i class="fas fa-truck"></i>
+                    On Delivery
+                </button>
+                <button class="pill" data-status="completed">
+                    <i class="fas fa-check-circle"></i>
+                    Completed
+                </button>
+            </div>
+        </div>
+
+        <!-- Orders Section -->
+        <section class="orders-section">
+            <!-- Active Orders -->
+            <div class="orders-group">
+                <h2 class="group-title">
+                    <i class="fas fa-fire"></i>
+                    Active Orders
+                </h2>
+                
+                <!-- Order Card 1 -->
+                <div class="order-card" data-status="preparing">
+                    <div class="order-header">
+                        <div class="order-info">
+                            <span class="order-number">#ORD-2024-1156</span>
+                            <span class="order-status status-preparing">
+                                <i class="fas fa-fire"></i>
+                                Preparing
+                            </span>
+                        </div>
+                        <div class="order-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            Nov 6, 2025 - 10:30 AM
+                        </div>
+                    </div>
+
+                    <div class="order-items">
+                        <div class="order-item">
+                            <span class="meal-emoji">🍳</span>
+                            <div class="item-details">
+                                <h4>Tapsilog Special</h4>
+                                <p>With extra egg</p>
+                            </div>
+                            <div class="item-quantity">x2</div>
+                            <div class="item-price">₱240.00</div>
+                        </div>
+                        <div class="order-item">
+                            <span class="meal-emoji">🍖</span>
+                            <div class="item-details">
+                                <h4>Porksilog</h4>
+                                <p>Regular size</p>
+                            </div>
+                            <div class="item-quantity">x1</div>
+                            <div class="item-price">₱110.00</div>
+                        </div>
+                    </div>
+
+                    <div class="order-footer">
+                        <div class="order-total">
+                            <span>Total:</span>
+                            <strong>₱350.00</strong>
+                        </div>
+                        <div class="order-actions">
+                            <button class="btn-track">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Track Order
+                            </button>
+                            <button class="btn-details">
+                                <i class="fas fa-info-circle"></i>
+                                Details
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="order-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 60%;"></div>
+                        </div>
+                        <p class="progress-text">
+                            <i class="fas fa-hourglass-half"></i>
+                            Estimated time: 15-20 minutes
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Order Card 2 -->
+                <div class="order-card" data-status="delivery">
+                    <div class="order-header">
+                        <div class="order-info">
+                            <span class="order-number">#ORD-2024-1155</span>
+                            <span class="order-status status-delivery">
+                                <i class="fas fa-truck"></i>
+                                On Delivery
+                            </span>
+                        </div>
+                        <div class="order-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            Nov 6, 2025 - 9:15 AM
+                        </div>
+                    </div>
+
+                    <div class="order-items">
+                        <div class="order-item">
+                            <span class="meal-emoji">🐟</span>
+                            <div class="item-details">
+                                <h4>Bangsilog</h4>
+                                <p>Crispy bangus</p>
+                            </div>
+                            <div class="item-quantity">x1</div>
+                            <div class="item-price">₱135.00</div>
+                        </div>
+                    </div>
+
+                    <div class="order-footer">
+                        <div class="order-total">
+                            <span>Total:</span>
+                            <strong>₱135.00</strong>
+                        </div>
+                        <div class="order-actions">
+                            <button class="btn-track">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Track Order
+                            </button>
+                            <button class="btn-details">
+                                <i class="fas fa-info-circle"></i>
+                                Details
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="order-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%;"></div>
+                        </div>
+                        <p class="progress-text">
+                            <i class="fas fa-shipping-fast"></i>
+                            Arriving in 5-10 minutes
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Orders -->
+            <div class="orders-group">
+                <h2 class="group-title">
+                    <i class="fas fa-history"></i>
+                    Recent Orders
+                </h2>
+
+                <!-- Order Card 3 -->
+                <div class="order-card" data-status="completed">
+                    <div class="order-header">
+                        <div class="order-info">
+                            <span class="order-number">#ORD-2024-1154</span>
+                            <span class="order-status status-completed">
+                                <i class="fas fa-check-circle"></i>
+                                Completed
+                            </span>
+                        </div>
+                        <div class="order-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            Nov 5, 2025 - 7:45 PM
+                        </div>
+                    </div>
+
+                    <div class="order-items">
+                        <div class="order-item">
+                            <span class="meal-emoji">🍗</span>
+                            <div class="item-details">
+                                <h4>Chicksilog</h4>
+                                <p>Crispy fried chicken</p>
+                            </div>
+                            <div class="item-quantity">x2</div>
+                            <div class="item-price">₱260.00</div>
+                        </div>
+                        <div class="order-item">
+                            <span class="meal-emoji">🥤</span>
+                            <div class="item-details">
+                                <h4>Iced Tea</h4>
+                                <p>Large</p>
+                            </div>
+                            <div class="item-quantity">x2</div>
+                            <div class="item-price">₱60.00</div>
+                        </div>
+                    </div>
+
+                    <div class="order-footer">
+                        <div class="order-total">
+                            <span>Total:</span>
+                            <strong>₱320.00</strong>
+                        </div>
+                        <div class="order-actions">
+                            <button class="btn-reorder">
+                                <i class="fas fa-redo"></i>
+                                Reorder
+                            </button>
+                            <button class="btn-review">
+                                <i class="fas fa-star"></i>
+                                Write Review
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Card 4 -->
+                <div class="order-card" data-status="completed">
+                    <div class="order-header">
+                        <div class="order-info">
+                            <span class="order-number">#ORD-2024-1153</span>
+                            <span class="order-status status-completed">
+                                <i class="fas fa-check-circle"></i>
+                                Completed
+                            </span>
+                        </div>
+                        <div class="order-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            Nov 5, 2025 - 12:30 PM
+                        </div>
+                    </div>
+
+                    <div class="order-items">
+                        <div class="order-item">
+                            <span class="meal-emoji">🍳</span>
+                            <div class="item-details">
+                                <h4>Tapsilog Special</h4>
+                                <p>With extra egg</p>
+                            </div>
+                            <div class="item-quantity">x1</div>
+                            <div class="item-price">₱120.00</div>
+                        </div>
+                        <div class="order-item">
+                            <span class="meal-emoji">🥤</span>
+                            <div class="item-details">
+                                <h4>Gulaman</h4>
+                                <p>Regular</p>
+                            </div>
+                            <div class="item-quantity">x1</div>
+                            <div class="item-price">₱25.00</div>
+                        </div>
+                    </div>
+
+                    <div class="order-footer">
+                        <div class="order-total">
+                            <span>Total:</span>
+                            <strong>₱145.00</strong>
+                        </div>
+                        <div class="order-actions">
+                            <button class="btn-reorder">
+                                <i class="fas fa-redo"></i>
+                                Reorder
+                            </button>
+                            <button class="btn-review">
+                                <i class="fas fa-star"></i>
+                                Write Review
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Card 5 -->
+                <div class="order-card" data-status="completed">
+                    <div class="order-header">
+                        <div class="order-info">
+                            <span class="order-number">#ORD-2024-1152</span>
+                            <span class="order-status status-completed">
+                                <i class="fas fa-check-circle"></i>
+                                Completed
+                            </span>
+                        </div>
+                        <div class="order-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            Nov 4, 2025 - 6:20 PM
+                        </div>
+                    </div>
+
+                    <div class="order-items">
+                        <div class="order-item">
+                            <span class="meal-emoji">🍖</span>
+                            <div class="item-details">
+                                <h4>Porksilog</h4>
+                                <p>Regular size</p>
+                            </div>
+                            <div class="item-quantity">x3</div>
+                            <div class="item-price">₱330.00</div>
+                        </div>
+                    </div>
+
+                    <div class="order-footer">
+                        <div class="order-total">
+                            <span>Total:</span>
+                            <strong>₱330.00</strong>
+                        </div>
+                        <div class="order-actions">
+                            <button class="btn-reorder">
+                                <i class="fas fa-redo"></i>
+                                Reorder
+                            </button>
+                            <button class="btn-review">
+                                <i class="fas fa-star"></i>
+                                Write Review
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Empty State (hidden by default) -->
+            <div class="empty-state" style="display: none;">
+                <div class="empty-icon">📦</div>
+                <h3>No Orders Yet</h3>
+                <p>You haven't placed any orders yet.</p>
+            </div>
+        </section>
+
+        <!-- Order Summary Card -->
+        <section class="summary-section">
+            <div class="summary-card">
+                <h3>
+                    <i class="fas fa-chart-line"></i>
+                    Order Statistics
+                </h3>
+                <div class="summary-stats">
+                    <div class="summary-item">
+                        <div class="summary-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <div class="summary-content">
+                            <h4>24</h4>
+                            <p>Total Orders</p>
+                        </div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <div class="summary-content">
+                            <h4>₱5,840</h4>
+                            <p>Total Spent</p>
+                        </div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="summary-content">
+                            <h4>4.8</h4>
+                            <p>Avg. Rating</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+        <div class="mobile-nav-container">
+            <a href="Dashboard.html" class="mobile-nav-item">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="Orders.html" class="mobile-nav-item active">
+                <i class="fas fa-receipt"></i>
+                <span>Orders</span>
+                <span class="nav-badge">3</span>
+            </a>
+            <a href="Favorites.html" class="mobile-nav-item">
+                <i class="fas fa-heart"></i>
+                <span>Favorites</span>
+            </a>
+            <a href="Profile.html" class="mobile-nav-item">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </a>
+            <a href="Settings.html" class="mobile-nav-item">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Notification Toast -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Orders JavaScript -->
+    <script src="../Js/Orders.js"></script>
+    <script src="../Js/Mobile.js"></script>
+</body>
+</html>

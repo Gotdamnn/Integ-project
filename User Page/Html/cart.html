@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Cart</title>
+	<!-- reuse Home.css variables & base styles -->
+	<link rel="stylesheet" href="../Css/Home.css">
+	<link rel="stylesheet" href="../Css/cart.css">
+    <link rel="stylesheet" href="../Css/Navbar.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-bowl-food"></i>
+                    <span>Bud budots</span>
+                </div>
+                <ul class="nav-menu">
+                    <li class="sidebar-welcome">
+                        <div class="guest-profile">
+                            <div class="guest-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="guest-info">
+                                <span class="guest-name">Admin User</span>
+                                <span class="guest-status">Signed in</span>
+                            </div>
+                        </div>
+                        <div class="welcome-message">
+                            <i class="fas fa-hand-wave"></i>
+                            <span>Welcome to Bud Budots!    </span>
+                        </div>
+                    </li>
+                    <li><a href="Index.html" class="nav-link active">Home</a></li>
+                    <li><a href="Menu.html" class="nav-link">Menu</a></li>
+                    <li><a href="Download.html" class="nav-link">Download</a></li>
+                    <li><a href="Mission.html" class="nav-link">Mission</a></li>
+                    <li><a href="About.html" class="nav-link">About</a></li>
+                    <li><a href="Contact.html" class="nav-link">Contact</a></li>
+                    <li class="sidebar-order-btn">
+                        <a href="../../User Dashboard/Html/Dashboard.html" class="btn-sidebar">
+                            <i class="fas fa-user"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="sidebar-order-btn">
+                        <a href="../Html/cart.html" class="btn-sidebar">
+                            <i class="fas fa-shopping-cart"></i>
+                            Cart
+                        </a>
+                    </li>
+                    <li class="sidebar-order-btn">
+                        <a href="../../Log In/Log In.html" class="btn-sidebar">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="../../User Dashboard/Html/Dashboard.html" class="btn-nav">
+                        <i class="fas fa-user"></i>
+                        Dashboard
+                    </a>
+                    <!-- Cart button -->
+                    <a href="../Html/cart.html" class="btn-nav" title="Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        Cart
+                    </a>
+                    <!-- Logout button -->
+                    <a href="../../Log In/Log In.html" class="btn-nav" title="Logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Logout
+                    </a>
+                    <button class="hamburger">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="48" fill="#FCC61D" opacity="0.2"/>
+                            <path d="M30,45 Q50,25 70,45" fill="none" stroke="#FCC61D" stroke-width="3" stroke-linecap="round"/>
+                            <ellipse cx="50" cy="55" rx="25" ry="15" fill="#FCC61D"/>
+                            <path d="M25,55 L25,70 Q25,75 30,75 L70,75 Q75,75 75,70 L75,55" fill="#C59560"/>
+                            <circle cx="40" cy="50" r="3" fill="#3338A0"/>
+                            <circle cx="50" cy="48" r="3" fill="#3338A0"/>
+                            <circle cx="60" cy="50" r="3" fill="#3338A0"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+		</nav>
+
+	<div class="container cart-page">
+		<div class="cart-grid">
+			<main class="cart-items">
+				<h2 class="cart-title">Cart</h2>
+				<div class="cart-actions">
+					<label class="select-all">
+						<input id="select-all" type="checkbox"> SELECT ALL
+					</label>
+					<button id="delete-selected" class="btn btn-secondary">DELETE</button>
+				</div>
+
+				<!-- Cart item list -->
+				<ul id="items-list" class="items-list">
+					<!-- Example items. data-price values used by JS -->
+					<li class="cart-row">
+						<label class="row-check">
+							<input class="item-check" type="checkbox">
+						</label>
+						<img class="thumb" src="../../Assets/Products/sample1.png" alt="Product 1">
+						<div class="info">
+							<div class="title">Fresh Calamansi Juice</div>
+							<div class="meta">Refreshing citrus drink</div>
+						</div>
+						<div class="price" data-price="6490">30</div>
+						<div class="qty">
+							<button class="qty-dec">−</button>
+							<input class="qty-input" type="number" min="1" value="2">
+							<button class="qty-inc">+</button>
+						</div>
+					</li>
+
+					<li class="cart-row">
+						<label class="row-check">
+							<input class="item-check" type="checkbox">
+						</label>
+						<img class="thumb" src="../../Assets/Products/sample2.png" alt="Product 2">
+						<div class="info">
+							<div class="title">Topsilog</div>
+							<div class="meta">Tender beef tapa, garlic rice, and sunny-side egg</div>
+						</div>
+						<div class="price" data-price="279">100.00</div>
+						<div class="qty">
+							<button class="qty-dec">−</button>
+							<input class="qty-input" type="number" min="1" value="1">
+							<button class="qty-inc">+</button>
+						</div>
+					</li>
+
+					<li class="cart-row">
+						<label class="row-check">
+							<input class="item-check" type="checkbox">
+						</label>
+						<img class="thumb" src="../../Assets/Products/sample3.png" alt="Product 3">
+						<div class="info">
+							<div class="title">Bud Budots Ultimate Silog</div>
+							<div class="meta">Tapa, longganisa, bacon, double rice, double egg</div>
+						</div>
+						<div class="price" data-price="160">149</div>
+						<div class="qty">
+							<button class="qty-dec">−</button>
+							<input class="qty-input" type="number" min="1" value="1">
+							<button class="qty-inc">+</button>
+						</div>
+					</li>
+				</ul>
+			</main>
+
+			<aside class="order-summary">
+				<h3>Order Summary</h3>
+				<div class="summary-row">
+					<span>Subtotal (<span id="summary-count">0</span> items)</span>
+					<span class="amount">₱<span id="summary-subtotal">0.00</span></span>
+				</div>
+
+				<div class="payment-methods">
+					<h4>Payment Method</h4>
+					<label><input name="payment" type="radio" value="cash" checked> Cash (counter)</label>
+					<label><input name="payment" type="radio" value="gcash"> GCash (QR only)</label>
+				</div>
+
+				<div class="total-row">
+					<span>Subtotal</span>
+					<span class="amount total">₱<span id="summary-total">0.00</span></span>
+				</div>
+
+				<button id="checkout-btn" class="btn btn-gold btn-large">PROCEED TO CHECKOUT(<span id="checkout-count">0</span>)</button>
+			</aside>
+		</div>
+	</div>
+
+	<!-- GCash QR Modal -->
+	<div id="gcash-modal" class="modal" aria-hidden="true">
+		<div class="modal-content">
+			<button id="close-modal" class="modal-close">×</button>
+			<h3>GCash Payment (Scan QR)</h3>
+			<div class="qr-placeholder">QR CODE<br><small>(replace with real QR)</small></div>
+			<p>Scan the QR code with your GCash app to complete payment. After successful payment, return here to confirm.</p>
+			<button id="gcash-confirm" class="btn btn-primary">I've Paid</button>
+		</div>
+	</div>
+
+	<!-- Generic dialog modal (used for alerts & confirms) -->
+	<div id="dialog-modal" class="modal" aria-hidden="true">
+		<div class="modal-content">
+			<div id="dialog-message" style="white-space:pre-wrap; text-align:left;">Message</div>
+			<div style="display:flex; gap:0.5rem; justify-content:center; margin-top:1rem;">
+				<button id="dialog-cancel" class="btn btn-secondary">Cancel</button>
+				<button id="dialog-ok" class="btn btn-primary">OK</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Receipt modal shown after successful checkout (Cash or GCash) -->
+	<div id="receipt-modal" class="modal" aria-hidden="true">
+		<div class="modal-content receipt-content" role="dialog" aria-label="Order receipt">
+			<button id="receipt-close" class="modal-close">×</button>
+			<div id="receipt-body">
+				<div class="receipt-header">
+					<h3 id="receipt-order-number">ORDER #000000</h3>
+				</div>
+				<div class="receipt-meta">
+					<div><strong>Payment:</strong> <span id="receipt-payment">Cash</span></div>
+					<div><strong>Date/Time:</strong> <span id="receipt-datetime">-</span></div>
+					<div><strong>Cashier:</strong> <span id="receipt-cashier">-</span></div>
+					<div><strong>Reference #:</strong> <span id="receipt-ref">-</span></div>
+				</div>
+				<div class="receipt-items">
+					<table>
+						<thead>
+							<tr><th>Item</th><th>Qty</th><th class="align-right">Price</th></tr>
+						</thead>
+						<tbody id="receipt-items-body">
+							<!-- rows inserted by JS -->
+						</tbody>
+					</table>
+				</div>
+				<div class="receipt-total">
+					<span>Total:</span>
+					<span class="amount">₱<span id="receipt-total">0.00</span></span>
+				</div>
+				<div class="receipt-actions" style="margin-top:1rem; display:flex; gap:0.5rem; justify-content:center;">
+					<button id="receipt-print" class="btn btn-primary">Print</button>
+					<button id="receipt-done" class="btn btn-secondary">Done</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="../Js/cart.js"></script>
+</body>
+</html>
+

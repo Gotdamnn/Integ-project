@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Menu - Bud budots | Authentic Filipino Silog Meals</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../Css/Navbar.css">
+    <link rel="stylesheet" href="../Css/Menu.css">
+</head>
+<body>
+
+    <!-- Loading Animation -->
+    <div class="loading-screen">
+        <div class="loading-icon">
+            <i class="fas fa-egg"></i>
+            <div class="loading-pan">
+                <i class="fas fa-circle"></i>
+            </div>
+        </div>
+        <p>Cooking up something delicious...</p>
+    </div>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-bowl-food"></i>
+                <span>Bud budots</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="sidebar-welcome">
+                    <div class="guest-profile">
+                        <div class="guest-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="guest-info">
+                            <span class="guest-name">Guest User</span>
+                            <span class="guest-status">Not signed in</span>
+                        </div>
+                    </div>
+                    <div class="welcome-message">
+                        <i class="fas fa-hand-wave"></i>
+                        <span>Welcome to Bud Budots!</span>
+                    </div>
+                </li>
+                <li><a href="Index.html" class="nav-link">Home</a></li>
+                <li><a href="Menu.html" class="nav-link active">Menu</a></li>
+                <li><a href="Download.html" class="nav-link">Download</a></li>
+                <li><a href="Mission.html" class="nav-link">Mission</a></li>
+                <li><a href="About.html" class="nav-link">About</a></li>
+                <li><a href="Contact.html" class="nav-link">Contact</a></li>
+                <li class="sidebar-order-btn">
+                    <a href="../../Log In/Log In.html" class="btn-sidebar">
+                        <i class="fas fa-user"></i>
+                        Log In
+                    </a>
+                </li>
+            </ul>
+            <div class="nav-actions">
+                <a href="../../Log In/Log In.html" class="btn-nav">
+                    <i class="fas fa-user"></i>
+                    Log In
+                </a>
+                <button class="hamburger">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="48" fill="#FCC61D" opacity="0.2"/>
+                        <path d="M30,45 Q50,25 70,45" fill="none" stroke="#FCC61D" stroke-width="3" stroke-linecap="round"/>
+                        <ellipse cx="50" cy="55" rx="25" ry="15" fill="#FCC61D"/>
+                        <path d="M25,55 L25,70 Q25,75 30,75 L70,75 Q75,75 75,70 L75,55" fill="#C59560"/>
+                        <circle cx="40" cy="50" r="3" fill="#3338A0"/>
+                        <circle cx="50" cy="48" r="3" fill="#3338A0"/>
+                        <circle cx="60" cy="50" r="3" fill="#3338A0"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="menu-hero">
+        <div class="hero-background">
+            <div class="floating-food food-1">🍳</div>
+            <div class="floating-food food-2">🥓</div>
+            <div class="floating-food food-3">🍚</div>
+            <div class="floating-food food-4">🥩</div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Our Menu</h1>
+            <p class="hero-subtitle">Proudly serving authentic Filipino silog meals, freshly cooked with love.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary">
+                    <i class="fas fa-utensils"></i>
+                    Order Now 🍳
+                </button>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-download"></i>
+                    Download App 📲
+                </button>
+            </div>
+        </div>
+        <div class="wave-divider">
+            <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path fill="#FFFBEB" d="M0,160L48,144C96,128,192,96,288,101.3C384,107,480,149,576,154.7C672,160,768,128,864,122.7C960,117,1056,139,1152,138.7C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Category Filter Bar -->
+    <section class="filter-section">
+        <div class="filter-container">
+            <button class="filter-btn active" data-category="all">
+                <i class="fas fa-th"></i>
+                <span>All</span>
+            </button>
+            <button class="filter-btn" data-category="silog">
+                <i class="fas fa-drumstick-bite"></i>
+                <span>Silog Meals</span>
+            </button>
+            <button class="filter-btn" data-category="addons">
+                <i class="fas fa-bacon"></i>
+                <span>Add-Ons</span>
+            </button>
+            <button class="filter-btn" data-category="drinks">
+                <i class="fas fa-mug-hot"></i>
+                <span>Drinks</span>
+            </button>
+            <button class="filter-btn" data-category="specials">
+                <i class="fas fa-star"></i>
+                <span>Specials</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Menu Grid Section -->
+    <section class="menu-grid-section">
+        <div class="container">
+            <div class="menu-grid">
+                
+                <!-- Silog Meals -->
+                <div class="menu-card" data-category="silog">
+                    <div class="card-badge">Popular</div>
+                    <div class="card-image">
+                        <img src="../../Assets/Products/tapsilog.jpg" alt="Tapsilog" onerror="this.src='https://via.placeholder.com/400x300/3338A0/FCC61D?text=Tapsilog'">
+                        <div class="steam-effect"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Tapsilog</h3>
+                        <p class="card-description">Tender beef tapa, garlic rice, and sunny-side egg</p>
+                        <div class="card-footer">
+                            <span class="price">₱89</span>
+                            <button class="add-btn">
+                                <i class="fas fa-plus"></i>
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="silog">
+                    <div class="card-image">
+                        <img src="../../Assets/Products/tocilog.jpg" alt="Tocilog" onerror="this.src='https://via.placeholder.com/400x300/3338A0/FCC61D?text=Tocilog'">
+                        <div class="steam-effect"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Tocilog</h3>
+                        <p class="card-description">Sweet tocino, garlic rice, and sunny-side egg</p>
+                        <div class="card-footer">
+                            <span class="price">₱85</span>
+                            <button class="add-btn">
+                                <i class="fas fa-plus"></i>
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="silog">
+                    <div class="card-image">
+                        <img src="../../Assets/Products/longsilog.jpg" alt="Longsilog" onerror="this.src='https://via.placeholder.com/400x300/3338A0/FCC61D?text=Longsilog'">
+                        <div class="steam-effect"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Longsilog</h3>
+                        <p class="card-description">Filipino longganisa, garlic rice, and sunny-side egg</p>
+                        <div class="card-footer">
+                            <span class="price">₱79</span>
+                            <button class="add-btn">
+                                <i class="fas fa-plus"></i>
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="silog">
+                    <div class="card-badge">Best Seller</div>
+                    <div class="card-image">
+                        <img src="../../Assets/Products/bangsilog.jpg" alt="Bangsilog" onerror="this.src='https://via.placeholder.com/400x300/3338A0/FCC61D?text=Bangsilog'">
+                        <div class="steam-effect"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Bangsilog</h3>
+                        <p class="card-description">Crispy bangus, garlic rice, and sunny-side egg</p>
+                        <div class="card-footer">
+                            <span class="price">₱99</span>
+                            <button class="add-btn">
+                                <i class="fas fa-plus"></i>
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="silog">
+                    <div class="card-image">
+                        <img src="../../Assets/Products/hotsilog.jpg" alt="Hotsilog" onerror="this.src='https://via.placeholder.com/400x300/3338A0/FCC61D?text=Hotsilog'">
+                        <div class="steam-effect"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Hotsilog</h3>
+                        <p class="card-description">Juicy hotdog, garlic rice, and sunny-side egg</p>
+                        <div class="card-footer">
+                            <span class="price">₱69</span>
+                            <button class="add-btn">
+                                <i class="fas fa-plus"></i>
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="silog">
+                    <div class="card-image">
+                        <img src="../../Assets/Products/cornsilog.jpg" alt="Cornsilog" onerror="this.src='https://via.placeholder.com/400x300/3338A0/FCC61D?text=Cornsilog'">
+                        <div class="steam-effect"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Cornsilog</h3>
+                        <p class="card-description">Corned beef, garlic rice, and sunny-side egg</p>
+                        <div class="card-footer">
+                            <span class="price">₱75</span>
+                            <button class="add-btn">
+                                <i class="fas fa-plus"></i>
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add-Ons -->
+                <div class="menu-card" data-category="addons">
+                    <div class="card-image">
+                        <img src="../../Assets/Products/extra-egg.jpg" alt="Extra Egg" onerror="this.src='https://via.placeholder.com/400x300/3338A0/FCC61D?text=Extra+Egg'">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Extra Egg</h3>
+                        <p class="card-description">One sunny-side up egg</p>
+                        <div class="card-footer">
+                            <span class="price">₱15</span>
+                            <button class="add-btn">
+                                <i class="fas fa-plus"></i>
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="addons">
+                    <div class="card-image">
+                        <img src="../../Assets/Products/extra-rice.jpg" alt="Extra Rice" onerror="this.src='https://via.placeholder.com/400x300/3338A0/FCC61D?text=Extra+Rice'">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Extra Rice</h3>
+                        <p class="card-description">Garlic fried rice</p>
+                        <div class="card-footer">
+                            <span class="price">₱20</span>
+                            <button class="add-btn">
+                                <i class="fas fa-plus"></i>
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="addons">
+                    <div class="card-image">
+                        <img src="../../Assets/Products/lumpia.jpg" alt="Lumpia" onerror="this.src='https://via.placeholder.com/400x300/3338A0/FCC61D?text=Lumpia'">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Lumpia Shanghai</h3>
+                        <p class="card-description">Crispy Filipino spring rolls (5 pcs)</p>
+                        <div class="card-footer">
+                            <span class="price">₱45</span>
+                            <button class="add-btn">
+                                <i class="fas fa-plus"></i>
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drinks -->
+                <div class="menu-card" data-category="drinks">
+                    <div class="card-image">
+                        <img src="../../Assets/Products/coffee.jpg" alt="Coffee" onerror="this.src='https://via.placeholder.com/400x300/3338A0/FCC61D?text=Coffee'">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Kape Barako</h3>
+                        <p class="card-description">Strong Filipino coffee</p>
+                        <div class="card-footer">
+                            <span class="price">₱35</span>
+                            <button class="add-btn">
+                                <i class="fas fa-plus"></i>
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="drinks">
+                    <div class="card-image">
+                        <img src="../../Assets/Products/juice.jpg" alt="Juice" onerror="this.src='https://via.placeholder.com/400x300/3338A0/FCC61D?text=Fresh+Juice'">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Fresh Calamansi Juice</h3>
+                        <p class="card-description">Refreshing citrus drink</p>
+                        <div class="card-footer">
+                            <span class="price">₱30</span>
+                            <button class="add-btn">
+                                <i class="fas fa-plus"></i>
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="drinks">
+                    <div class="card-image">
+                        <img src="../../Assets/Products/soda.jpg" alt="Soda" onerror="this.src='https://via.placeholder.com/400x300/3338A0/FCC61D?text=Softdrinks'">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Softdrinks</h3>
+                        <p class="card-description">Coke, Sprite, or Royal</p>
+                        <div class="card-footer">
+                            <span class="price">₱25</span>
+                            <button class="add-btn">
+                                <i class="fas fa-plus"></i>
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Specials -->
+                <div class="menu-card featured" data-category="specials">
+                    <div class="card-badge">Special</div>
+                    <div class="card-image">
+                        <img src="../../Assets/Products/ultimate-silog.jpg" alt="Ultimate Silog" onerror="this.src='https://via.placeholder.com/400x300/3338A0/FCC61D?text=Ultimate+Silog'">
+                        <div class="steam-effect"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Bud Budots Ultimate Silog</h3>
+                        <p class="card-description">Tapa, longganisa, bacon, double rice, double egg</p>
+                        <div class="card-footer">
+                            <span class="price">₱149</span>
+                            <button class="add-btn">
+                                <i class="fas fa-plus"></i>
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card featured" data-category="specials">
+                    <div class="card-badge">Combo</div>
+                    <div class="card-image">
+                        <img src="../../Assets/Products/mega-tocilog.jpg" alt="Mega Tocilog" onerror="this.src='https://via.placeholder.com/400x300/3338A0/FCC61D?text=Mega+Tocilog'">
+                        <div class="steam-effect"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Mega Tocilog Combo</h3>
+                        <p class="card-description">Double tocino, extra rice, coffee, and lumpia</p>
+                        <div class="card-footer">
+                            <span class="price">₱139</span>
+                            <button class="add-btn">
+                                <i class="fas fa-plus"></i>
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card featured" data-category="specials">
+                    <div class="card-badge">Deluxe</div>
+                    <div class="card-image">
+                        <img src="../../Assets/Products/bangsilog-deluxe.jpg" alt="Bangsilog Deluxe" onerror="this.src='https://via.placeholder.com/400x300/3338A0/FCC61D?text=Bangsilog+Deluxe'">
+                        <div class="steam-effect"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Bangsilog Deluxe</h3>
+                        <p class="card-description">Premium bangus belly, atchara, and calamansi juice</p>
+                        <div class="card-footer">
+                            <span class="price">₱159</span>
+                            <button class="add-btn">
+                                <i class="fas fa-plus"></i>
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Favorites Section -->
+    <section class="favorites-section">
+        <div class="container">
+            <h2 class="section-title">Our Customers' Favorites</h2>
+            <div class="favorites-grid">
+                <div class="favorite-card">
+                    <div class="favorite-image">
+                        <img src="../../Assets/Products/tapsilog.jpg" alt="Customer Favorite" onerror="this.src='https://via.placeholder.com/400x300/3338A0/FCC61D?text=Tapsilog'">
+                    </div>
+                    <div class="favorite-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="favorite-quote">"Best tapsilog in town! Sobrang sarap at fresh!"</p>
+                        <p class="customer-name">— Maria Santos</p>
+                    </div>
+                </div>
+
+                <div class="favorite-card">
+                    <div class="favorite-image">
+                        <img src="../../Assets/Products/bangsilog.jpg" alt="Customer Favorite" onerror="this.src='https://via.placeholder.com/400x300/3338A0/FCC61D?text=Bangsilog'">
+                    </div>
+                    <div class="favorite-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="favorite-quote">"Crispy bangus with perfect garlic rice. Lagi ko to inooorder!"</p>
+                        <p class="customer-name">— Juan Dela Cruz</p>
+                    </div>
+                </div>
+
+                <div class="favorite-card">
+                    <div class="favorite-image">
+                        <img src="../../Assets/Products/ultimate-silog.jpg" alt="Customer Favorite" onerror="this.src='https://via.placeholder.com/400x300/3338A0/FCC61D?text=Ultimate+Silog'">
+                    </div>
+                    <div class="favorite-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="favorite-quote">"Ultimate Silog is worth it! Busog na busog ako!"</p>
+                        <p class="customer-name">— Anna Reyes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call-to-Action Section -->
+    <section class="cta-section">
+        <div class="floating-rice grain-1">🌾</div>
+        <div class="floating-rice grain-2">🌾</div>
+        <div class="floating-rice grain-3">🥚</div>
+        <div class="floating-rice grain-4">🥚</div>
+        <div class="cta-content">
+            <h2 class="cta-title">Craving silog now?</h2>
+            <p class="cta-subtitle">Let's make your day masarap!</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary">
+                    <i class="fas fa-shopping-bag"></i>
+                    Order Now
+                </button>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-gift"></i>
+                    See Promotions
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Navigation Bar (Mobile Only) -->
+    <nav class="bottom-nav">
+        <a href="Index.html" class="bottom-nav-item" data-page="home">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="Menu.html" class="bottom-nav-item active" data-page="menu">
+            <i class="fas fa-utensils"></i>
+            <span>Menu</span>
+        </a>
+        <a href="../../Log In/Log In.html" class="bottom-nav-item" data-page="login">
+            <i class="fas fa-user"></i>
+            <span>Login</span>
+        </a>
+        <a href="About.html" class="bottom-nav-item" data-page="about">
+            <i class="fas fa-info-circle"></i>
+            <span>About</span>
+        </a>
+        <a href="Download.html" class="bottom-nav-item" data-page="download">
+            <i class="fas fa-download"></i>
+            <span>Download</span>
+        </a>
+    </nav>
+
+    <script src="../Js/Menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,343 @@
+/* Cart page styles. Uses variables & base from Home.css */
+
+.cart-page {
+	padding: 2.5rem 0;
+	/* subtle branded backdrop to sit under white cards */
+	background: linear-gradient(180deg, rgba(51,56,160,0.06) 0%, rgba(51,56,160,0.03) 100%);
+}
+
+.cart-grid {
+	display: grid;
+	/* products on the left (flex), summary fixed on the right */
+	grid-template-columns: 1fr 360px;
+	gap: 2rem;
+	align-items: start;
+}
+
+.cart-items {
+	/* slightly warm white card so it reads well on the bluish backdrop */
+	background: rgba(255,255,255,0.98);
+	border-radius: 10px;
+	box-shadow: 0 8px 30px rgba(51,56,160,0.06), var(--shadow-sm);
+	padding: 1rem;
+}
+
+.cart-actions {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5rem 0 1rem 0;
+	border-bottom: 1px solid rgba(51,56,160,0.04);
+}
+
+.cart-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 6px 0 12px;
+}
+
+.select-all {
+	font-weight: 700;
+	color: var(--primary-blue);
+}
+
+.items-list {
+	list-style: none;
+	margin-top: 1rem;
+}
+
+.cart-row {
+	display: grid;
+	grid-template-columns: 36px 80px 1fr 120px 140px;
+	gap: 1rem;
+	align-items: center;
+	padding: 1rem;
+	border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.cart-row .row-check {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.thumb {
+	width: 70px;
+	height: 70px;
+	object-fit: contain;
+	border-radius: 8px;
+	background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,250,0.98));
+	box-shadow: 0 6px 18px rgba(51,56,160,0.06);
+}
+
+.info .title {
+	font-weight: 700;
+	color: var(--primary-blue);
+	font-size: 1.02rem;
+}
+
+.info .meta {
+	color: rgba(0,0,0,0.55);
+	font-size: 0.9rem;
+	margin-top: 0.25rem;
+}
+
+.price {
+	text-align: right;
+	font-weight: 800;
+	color: var(--primary-blue);
+}
+
+.qty {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 0.5rem;
+}
+
+.qty button {
+	width: 36px;
+	height: 36px;
+	border-radius: 8px;
+	border: 1px solid rgba(0,0,0,0.06);
+	background: var(--primary-white);
+	cursor: pointer;
+	font-size: 1.2rem;
+	transition: box-shadow 0.15s ease, transform 0.12s ease;
+}
+
+.qty button:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(51,56,160,0.04); }
+
+.qty-input {
+	width: 56px;
+	text-align: center;
+	padding: 0.5rem;
+	border-radius: 6px;
+	border: 1px solid rgba(0,0,0,0.06);
+}
+
+.order-summary {
+	background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,250,0.98));
+	padding: 1.25rem;
+	border-radius: 12px;
+	box-shadow: 0 10px 40px rgba(51,56,160,0.06), var(--shadow-sm);
+	position: sticky;
+	top: 90px;
+	border: 1px solid rgba(51,56,160,0.04);
+}
+
+.order-summary h3 {
+	margin-bottom: 1rem;
+	background: var(--gradient-blue-gold);
+	color: #fff;
+	display: inline-block;
+	padding: 0.45rem 0.9rem;
+	border-radius: 999px;
+	font-size: 1rem;
+	box-shadow: var(--glow-gold);
+}
+
+.summary-row {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 0.65rem;
+	color: rgba(0,0,0,0.6);
+}
+
+.voucher {
+	display: flex;
+	gap: 0.5rem;
+	margin: 0.75rem 0;
+}
+
+.voucher input {
+	flex: 1;
+	padding: 0.6rem;
+	border-radius: 6px;
+	border: 1px solid rgba(0,0,0,0.06);
+}
+
+.payment-methods {
+	margin: 0.75rem 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.total-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 1rem 0;
+	font-weight: 800;
+	color: var(--primary-blue);
+}
+
+.amount { font-weight: 700; }
+
+.modal {
+	position: fixed;
+	inset: 0;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0,0,0,0.45);
+	z-index: 1200;
+}
+
+.modal[aria-hidden="false"] { display: flex; }
+
+.modal-content {
+	background: var(--primary-white);
+	padding: 1.5rem;
+	border-radius: 10px;
+	width: 420px;
+	box-shadow: var(--shadow-lg);
+	text-align: center;
+}
+
+/* Receipt modal specific styles */
+.receipt-content {
+    width: 520px; /* slightly wider for table */
+    max-width: calc(100% - 32px);
+    text-align: left;
+}
+.receipt-header { text-align: center; margin-bottom: 0.6rem; }
+.receipt-header h3 { margin:0; letter-spacing: 1px; }
+.receipt-meta { display:flex; flex-wrap:wrap; gap:0.5rem 1.2rem; font-size:0.95rem; color:rgba(0,0,0,0.7); margin-bottom:0.75rem; }
+.receipt-items table { width:100%; border-collapse:collapse; }
+.receipt-items th { text-align:left; padding:6px 8px; font-weight:700; border-bottom:1px solid rgba(0,0,0,0.06); }
+.receipt-items td { padding:6px 8px; border-bottom:1px dashed rgba(0,0,0,0.04); }
+.receipt-items .align-right { text-align:right; }
+.receipt-total { display:flex; justify-content:space-between; align-items:center; font-weight:800; margin-top:0.75rem; color:var(--primary-blue); }
+.receipt-actions { display:flex; gap:0.5rem; justify-content:center; margin-top:1rem; }
+.receipt-actions .btn { min-width:120px; }
+
+/* Style for the print button in the receipt modal (visible prior to printing) */
+#receipt-print,
+.receipt-actions .btn-primary {
+	background: var(--primary-blue);
+	color: #fff;
+	border: none;
+	border-radius: 8px;
+	padding: 0.5rem 0.9rem;
+	font-weight: 700;
+}
+
+/* Done button already gold; ensure spacing and centering */
+#receipt-done { min-width:120px; }
+
+@media (max-width: 600px) {
+    .receipt-content { width: 100%; padding:1rem; }
+}
+
+.qr-placeholder {
+	width: 220px;
+	height: 220px;
+	margin: 1rem auto;
+	border: 1px dashed rgba(51,56,160,0.08);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: rgba(0,0,0,0.45);
+}
+
+.modal-close {
+	position: absolute;
+	right: 1rem;
+	top: 1rem;
+	background: transparent;
+	border: none;
+	font-size: 1.25rem;
+	cursor: pointer;
+}
+
+/* Primary CTA styled as gold pill with glow to match header */
+.order-summary .btn-gold, .btn-gold {
+	background: var(--gradient-blue-gold);
+	color: #fff;
+	padding: 0.9rem 1.6rem;
+	border-radius: 999px;
+	font-weight: 800;
+	box-shadow: 0 8px 30px rgba(252,198,29,0.18), var(--glow-gold);
+	border: none;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.order-summary .btn-gold:hover, .btn-gold:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 18px 60px rgba(252,198,29,0.25), var(--glow-gold);
+}
+
+/* Make the receipt Done button use the gold CTA style */
+#receipt-done,
+.receipt-actions .btn-secondary {
+	background: var(--gradient-blue-gold);
+	color: #fff;
+	border: none;
+	box-shadow: 0 8px 30px rgba(252,198,29,0.18), var(--glow-gold);
+	border-radius: 999px;
+	font-weight: 700;
+	padding: 0.65rem 1rem;
+}
+.receipt-actions .btn-secondary:hover,
+#receipt-done:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 18px 60px rgba(252,198,29,0.25), var(--glow-gold);
+}
+
+/* small visual tweaks for summary amounts */
+.order-summary .amount { color: var(--primary-blue); font-size: 1.05rem; }
+
+/* make the card feel closer to the header's rounded pills on small screens and improve mobile layout */
+@media (max-width: 900px) {
+	.order-summary h3 { display: block; border-radius: 8px; padding: 0.5rem 0.6rem; }
+	.cart-grid { grid-template-columns: 1fr; }
+	/* compact row layout for mobile: checkbox, thumb, info, controls */
+	.cart-row { grid-template-columns: 36px 64px 1fr 80px; gap: 0.5rem; padding: 0.75rem; }
+	.thumb { width:56px; height:56px; }
+
+	/* Make the order summary fixed at the bottom on mobile for quick checkout access
+	   Render as a compact three-column bar: label | subtotal | CTA */
+	.order-summary {
+		position: fixed;
+		left: 12px;
+		right: 12px;
+		bottom: 6px;
+		margin: 0;
+		width: auto;
+		border-radius: 12px;
+		padding: 0.5rem 0.75rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 12px;
+		z-index: 2200; /* above navbar/sidebar overlays */
+		box-shadow: 0 8px 30px rgba(51,56,160,0.06), var(--shadow-sm);
+		background: linear-gradient(90deg, rgba(51,56,160,0.06), rgba(255,255,255,0.98));
+	}
+
+	/* Keep the small pill label visible */
+	.order-summary h3 { display: inline-block; font-size: 0.9rem; padding: 0.25rem 0.6rem; margin: 0; }
+
+	/* Hide verbose sections and only show compact total */
+	.order-summary .summary-row,
+	.order-summary .payment-methods,
+	.order-summary .voucher { display: none; }
+
+	.order-summary .total-row { display: flex; align-items: center; gap: 8px; }
+	.order-summary .total-row .amount { font-weight: 800; color: var(--primary-blue); }
+
+	/* Smaller CTA on mobile to avoid overflow */
+	.order-summary .btn-gold {
+		padding: 0.55rem 0.9rem;
+		font-size: 0.85rem;
+		border-radius: 999px;
+		min-width: 120px;
+	}
+
+	/* add bottom padding so content isn't hidden under the fixed summary; increased to keep the bar further below content */
+	.cart-items { padding-bottom: 200px; }
+}
+

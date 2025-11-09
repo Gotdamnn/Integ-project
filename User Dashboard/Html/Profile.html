@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Bud Budots</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Navigation CSS -->
+    <link rel="stylesheet" href="../Css/Nav.css">
+    
+    <!-- Profile CSS -->
+    <link rel="stylesheet" href="../Css/Profile.css">
+    
+    <!-- Mobile CSS -->
+    <link rel="stylesheet" href="../Css/Mobile.css">
+</head>
+<body>
+    <!-- Wave Background Decoration -->
+    <div class="wave-bg"></div>
+    
+    <!-- Sidebar Overlay for Mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <!-- Logo -->
+            <div class="logo">
+                <i class="fas fa-bowl-food"></i>
+                <span class="brand-name">Bud <span class="brand-accent">Budots</span></span>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search settings, profile info...">
+            </div>
+
+            <!-- Right Actions -->
+            <div class="nav-actions">
+                <!-- Notifications -->
+                <button class="nav-icon" id="notificationBtn">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+
+                <!-- Cart -->
+                <button class="nav-icon" id="cartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="notification-badge">2</span>
+                </button>
+
+                <!-- User Profile -->
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=Juan+Dela+Cruz&background=FCC61D&color=3338A0&bold=true" alt="User">
+                    <div class="user-info">
+                        <span class="user-name">Juan Dela Cruz</span>
+                        <span class="user-role">Food Lover</span>
+                    </div>
+                    <i class="fas fa-chevron-down dropdown-arrow"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wave Decoration -->
+        <div class="wave-decoration">
+            <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
+                <path d="M0,30 Q300,0 600,30 T1200,30 L1200,60 L0,60 Z" fill="#FCC61D" opacity="0.3"/>
+            </svg>
+            <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
+                <path d="M0,40 Q300,10 600,40 T1200,40 L1200,60 L0,60 Z" fill="#3338A0" opacity="0.2"/>
+            </svg>
+        </div>
+    </nav>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+
+        </div>
+
+        <div class="sidebar-content">
+            <ul class="sidebar-menu">
+                <li>
+                    <a href="Dashboard.html">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Orders.html">
+                        <i class="fas fa-receipt"></i>
+                        <span>My Orders</span>
+                        <span class="menu-badge">3</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Favorites.html">
+                        <i class="fas fa-heart"></i>
+                        <span>Favorites</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="Profile.html">
+                        <i class="fas fa-user"></i>
+                        <span>My Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Settings.html">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="sidebar-promo">
+                <div class="promo-card">
+                    <i class="fas fa-gift"></i>
+                    <h4>Special Offer!</h4>
+                    <p>Get 20% off on your next order</p>
+                    <button class="btn-claim">Claim Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-footer">
+            <a href="../Html/Dashboard.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back</span>
+            </a>
+            <a href="../../Log In/Log In.html" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <div class="cover-photo">
+                <button class="btn-edit-cover">
+                    <i class="fas fa-camera"></i>
+                    Change Cover
+                </button>
+            </div>
+            
+            <div class="profile-info-card">
+                <div class="profile-avatar">
+                    <img src="https://ui-avatars.com/api/?name=Juan+Dela+Cruz&background=FCC61D&color=3338A0&bold=true&size=150" alt="Profile">
+                    <button class="btn-change-avatar">
+                        <i class="fas fa-camera"></i>
+                    </button>
+                </div>
+                
+                <div class="profile-details">
+                    <h1>Juan Dela Cruz</h1>
+                    <p class="profile-role">
+                        <i class="fas fa-utensils"></i>
+                        Food Lover
+                    </p>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <strong>24</strong>
+                            <span>Orders</span>
+                        </div>
+                        <div class="stat">
+                            <strong>12</strong>
+                            <span>Favorites</span>
+                        </div>
+                        <div class="stat">
+                            <strong>850</strong>
+                            <span>Points</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="profile-actions">
+                    <button class="btn-edit-profile">
+                        <i class="fas fa-edit"></i>
+                        Edit Profile
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Content -->
+        <div class="profile-content">
+            <!-- Personal Information -->
+            <section class="info-section">
+                <div class="section-header">
+                    <h2>
+                        <i class="fas fa-user-circle"></i>
+                        Personal Information
+                    </h2>
+                    <button class="btn-edit-section">
+                        <i class="fas fa-pen"></i>
+                        Edit
+                    </button>
+                </div>
+                
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>Full Name</label>
+                        <p>Juan Dela Cruz</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Email Address</label>
+                        <p>juan.delacruz@email.com</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Phone Number</label>
+                        <p>+63 912 345 6789</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Birthday</label>
+                        <p>January 15, 1995</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Gender</label>
+                        <p>Male</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Member Since</label>
+                        <p>March 2024</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Delivery Addresses -->
+            <section class="info-section">
+                <div class="section-header">
+                    <h2>
+                        <i class="fas fa-map-marker-alt"></i>
+                        Delivery Addresses
+                    </h2>
+                    <button class="btn-add-address">
+                        <i class="fas fa-plus"></i>
+                        Add New
+                    </button>
+                </div>
+                
+                <div class="address-list">
+                    <div class="address-card">
+                        <div class="address-badge">Default</div>
+                        <h3>Home</h3>
+                        <p>123 Mabuhay Street, Brgy. San Isidro</p>
+                        <p>Quezon City, Metro Manila 1100</p>
+                        <div class="address-actions">
+                            <button class="btn-text">
+                                <i class="fas fa-edit"></i>
+                                Edit
+                            </button>
+                            <button class="btn-text danger">
+                                <i class="fas fa-trash"></i>
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="address-card">
+                        <h3>Office</h3>
+                        <p>456 Business Avenue, BGC</p>
+                        <p>Taguig City, Metro Manila 1634</p>
+                        <div class="address-actions">
+                            <button class="btn-text">
+                                <i class="fas fa-check"></i>
+                                Set as Default
+                            </button>
+                            <button class="btn-text">
+                                <i class="fas fa-edit"></i>
+                                Edit
+                            </button>
+                            <button class="btn-text danger">
+                                <i class="fas fa-trash"></i>
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Payment Methods -->
+            <section class="info-section">
+                <div class="section-header">
+                    <h2>
+                        <i class="fas fa-credit-card"></i>
+                        Payment Methods
+                    </h2>
+                    <button class="btn-add-payment">
+                        <i class="fas fa-plus"></i>
+                        Add New
+                    </button>
+                </div>
+                
+                <div class="payment-list">
+                    <div class="payment-card">
+                        <div class="payment-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="payment-info">
+                            <h3>Visa ending in 4242</h3>
+                            <p>Expires 12/2025</p>
+                        </div>
+                        <div class="payment-badge">Default</div>
+                        <button class="btn-icon">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="payment-card">
+                        <div class="payment-icon gcash">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="payment-info">
+                            <h3>GCash</h3>
+                            <p>+63 912 345 6789</p>
+                        </div>
+                        <button class="btn-icon">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Account Activity -->
+            <section class="info-section">
+                <div class="section-header">
+                    <h2>
+                        <i class="fas fa-history"></i>
+                        Recent Activity
+                    </h2>
+                    <button class="btn-text">
+                        View All
+                    </button>
+                </div>
+                
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <div class="activity-details">
+                            <h4>Order Placed</h4>
+                            <p>Tapsilog Special x2, Porksilog x1</p>
+                        </div>
+                        <div class="activity-time">
+                            <span>2 hours ago</span>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon favorite">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="activity-details">
+                            <h4>Added to Favorites</h4>
+                            <p>Bangsilog</p>
+                        </div>
+                        <div class="activity-time">
+                            <span>1 day ago</span>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon review">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="activity-details">
+                            <h4>Review Posted</h4>
+                            <p>5 stars for Chicksilog</p>
+                        </div>
+                        <div class="activity-time">
+                            <span>3 days ago</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+        <div class="mobile-nav-container">
+            <a href="Dashboard.html" class="mobile-nav-item">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="Orders.html" class="mobile-nav-item">
+                <i class="fas fa-receipt"></i>
+                <span>Orders</span>
+                <span class="nav-badge">3</span>
+            </a>
+            <a href="Favorites.html" class="mobile-nav-item">
+                <i class="fas fa-heart"></i>
+                <span>Favorites</span>
+            </a>
+            <a href="Profile.html" class="mobile-nav-item active">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </a>
+            <a href="Settings.html" class="mobile-nav-item">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Notification Toast -->
+    <div class="toast-container" id="toastContainer"></div>
+    
+    <!-- Profile JavaScript -->
+    <script src="../Js/Profile.js"></script>
+    <script src="../Js/Mobile.js"></script>
+</body>
+</html>
